@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 100%;
+            padding:5px;
+            margin:3px;
+            border-radius:3px;
+            border:none;
+            outline:none;
+        }
+        input:focus{
+            box-shadow: 0px 0px 10px blue;
+        }
+        button{
+            background-color: green;
+            color:white;
+            border:none;
+            padding:5px;
+            margin:3px;
+            border-radius:3px;
+        }
+        legend,label{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 20px;
+        }
+        fieldset{
+            color:green;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form >
+        <fieldset>
+            <legend>math objects demo</legend>
+            <input type="text" name="int" placeholder="enter a number" autofocus>
+            <label>squareroot</label>
+            <input type="text" value="" placeholder="squareroot" class="intresult">
+            <label>square</label>
+            <input type="text" value="" placeholder="square" class="intresult">
+            <label>area of circle</label>
+            <input type="text" value="" placeholder="area of circle" class="intresult">
+            <label>log2(x)</label>
+            <input type="text" value="" placeholder="log2(x)" class="intresult">
+            <label>log10(x)</label>
+            <input type="text" value="" placeholder="log10(x)" class="intresult">
+            <button type="button" onclick="intcalc()">calculate</button>
+        </fieldset>
+        <fieldset>
+            <legend>calendar objects</legend>
+            <input type="date" name="date" placeholder="enter a date" autofocus>
+            <label>day of week</label>
+            <input type="text" value="" placeholder="day of week" class="dateresult">
+            <label>day of year</label>
+            <input type="text" value="" placeholder="day of year" class="dateresult">
+            <label>day of month</label>
+            <input type="text" value="" placeholder="day of month" class="dateresult">
+            <label>day of week</label>
+            <input type="text" value="" placeholder="day of week" class="dateresult">
+            <button type="button" onclick="datecalc()">calculate</button>
+            </fieldset>
+        <fieldset>
+            <legend>string objects</legend>
+            <input type="text" name="string" placeholder="enter a string" autofocus>
+            <label>length</label>
+            <input type="text" value="" placeholder="length" class="stringresult">
+            <label>lower case</label>
+            <input type="text" value="" placeholder="lower case" class="stringresult">
+            <label>upper case</label>
+            <input type="text" value="" placeholder="upper case" class="stringresult">
+            <label>find</label>
+            <input type="text" value="" placeholder="find" class="stringresult">
+            <button type="button" onclick="stringcalc()">calculate</button>
+        </fieldset>
+        <fieldset>
+            <legend>alphabet fields</legend>
+            <input type="text" name="alphabet" placeholder="enter a alphabet" autofocus>
+            <label>is vowel</label>
+            <input type="text" value="" placeholder="is vowel" class="alphabetresult">
+            <label>is consonant</label>
+            <input type="text" value="" placeholder="is consonant" class="alphabetresult">
+            <label>is upper case</label>
+            <input type="text" value="" placeholder="is upper case" class="alphabetresult">
+            <label>is lower case</label>
+            <input type="text" value="" placeholder="is lower case" class="alphabetresult">
+            <button type="button" onclick="alphabetcalc()">calculate</button>
+        </fieldset>
+        <fieldset>
+            <legend>number fields</legend>
+            <input type="text" name="number" placeholder="enter a number" autofocus>
+            <label>is even</label>
+            <input type="text" value="" placeholder="is even" class="numberresult">
+            <label>is odd</label>
+            <input type="text" value="" placeholder="is odd" class="numberresult">
+            <button onclick="numfields()">find</button>
+        </fieldset>
+    </form>
+    <script>
+        function alphabetcalc(){
+            var alphabet = document.getElementsByName("alphabet")[0].value;
+            var alphabetresult = document.getElementsByClassName("alphabetresult");
+            alphabetresult[0].value = alphabet.length;
+            alphabetresult[1].value = alphabet.toLowerCase();
+            alphabetresult[2].value = alphabet.toUpperCase();
+            alphabetresult[3].value = alphabet.indexOf("a");
+            alphabetresult[4].value = alphabet.indexOf("e");
+            alphabetresult[5].value = alphabet.indexOf("i");
+            alphabetresult[6].value = alphabet.indexOf("o");
+            alphabetresult[7].value = alphabet.indexOf("u");
+        }
+        function numfields(){
+            var num=document.forms[0].number.value;
+            var numresult=document.getElementsByClassName("numberresult");
+            if(num%2==0){
+                numresult[0].value="true";
+            }
+            else{
+                numresult[0].value="false";
+            }
+            if(num%2!=0){
+                numresult[1].value="true";
+            }
+            else{
+                numresult[1].value="false";
+            }
+        }
+        function intcalc(){
+            var int=document.getElementsByName("int")[0].value;
+            var intresult=document.getElementsByClassName("intresult");
+            intresult[0].value=Math.sqrt(int);
+            intresult[1].value=Math.pow(int,2);
+            intresult[2].value=Math.PI*Math.pow(int,2);
+            intresult[3].value=Math.log2(int);
+            intresult[4].value=Math.log10(int);
+        }
+        function stringcalc(){
+            var string=document.getElementsByName("string")[0].value;
+            var stringresult=document.getElementsByClassName("stringresult");
+            stringresult[0].value=string.length;
+            stringresult[1].value=string.toLowerCase();
+            stringresult[2].value=string.toUpperCase();
+            stringresult[3].value=string.indexOf("a");
+        }
+        function datecalc(){
+            var date=document.getElementsByName("date")[0].value;
+            var dateresult=document.getElementsByClassName("dateresult");
+            var d=new Date(date);
+            dateresult[1].value=d.toLocaleDateString();
+            dateresult[0].value=d.getDay();
+            dateresult[2].value=d.getDate();
+            dateresult[3].value=d.getMonth();
+            dateresult[4].value=d.getFullYear();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+14.Write a program to display a form that accepts student's name, age, father name. When age field receives its focus display message that age should be 18 to 25. After losing its focus from age field verify user entered in between given values or not display respective message
+
+<!doctype html>
+<html>
+<head>
+<title>Age Validation</title>
+<script>
+function display()
+{
+var age=parseInt(document.getElementById('age').value);
+var name= document.getElementById('name').value;
+var fatherName=document.getElementById('father').value;
+if(age<18 || age>25)
+	{
+		alert('Enter age between 18 and 25');
+		document.getElementById('age').focus();
+	}
+document.writeln(name+"<br />");
+document.writeln(age+"<br />");
+document.writeln(fatherName+"<br />");
+}
+</script>
+</head>
+<body>
+<form onsubmit="display()">
+<table>
+<tr>
+<th>Name</th>
+<td><input type="text" id="name" /></td>
+</tr>
+<tr>
+<th>Age</th>
+<td><input type="text" id="age"" /></td>
+</tr>
+<tr>
+<th>Father name</th>
+<td><input type="text" id="father" /></td>
+</tr>
+<tr>
+<td><input type="submit" value="Submit" /></td>
+<td><input type="reset" value="Clear" /></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

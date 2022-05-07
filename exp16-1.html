@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%) fixed;
+            
+        }
+        button{
+            font-weight:bold;
+            border:none;
+            outline:none;
+        }
+        #res{
+            background-color: azure;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+        }
+        button{
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 20%;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+        input{
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        h1{
+            text-align: center;
+            font-size: 40px;
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 2px 2px #000;
+        }
+        button:hover{
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <h1>Array operations</h1>
+    <button onclick="create()">create</button>
+    <button onclick="duplicate()">duplicate</button>
+    <button onclick="sort()">sort</button>
+    <button onclick="add()">add</button>
+    <button onclick="remove()">delete</button>
+    <button onclick="display()">display</button>
+    <br><br>
+    <div id="res"><label id="result">result</label></div>
+    <script>
+        var arr=[];
+        function create(){
+            arr=[];
+            var n=prompt("Enter number of elements");
+            for(var i=0;i<n;i++){
+                var x=prompt("Enter element");
+                arr.push(x);
+            }
+            document.getElementById("result").innerHTML="<marquee><b>array created</b></marquee>";
+        }
+        function sort(){
+            arr.sort();
+            //document.getElementById("result").innerHTML="";
+            display();
+        }
+        function add(){
+            var x=prompt("Enter element");
+            arr.push(x);
+            document.getElementById("result").innerHTML="<marquee>added "+x+" to array</marquee>";
+        }
+        function remove(){
+            var x=prompt("Enter element to delete");
+            var index=arr.indexOf(x);
+            console.log(index);
+            if(index==-1){
+                document.getElementById("result").innerHTML="<marquee><b>element not found</b></marquee>";
+            }
+            else if(index>=0){
+                arr.splice(index,1);
+                document.getElementById("result").innerHTML="<marquee>removed "+x+" from array</marquee>";
+            }
+            
+        }
+        function display(){
+            document.getElementById("result").innerHTML="";
+            for(var i=0;i<arr.length;i++){
+                document.getElementById("result").innerHTML+="<h4>"+arr[i]+"</h4>";
+            }
+        }
+        function duplicate(){
+            var x=prompt("Enter element to duplicate");
+            var index=arr.indexOf(x);
+            if(index==-1){
+                document.getElementById("result").innerHTML="<marquee><b>element not found</b></marquee>";
+            }
+            else if(index>=0){
+                arr.push(x);
+                document.getElementById("result").innerHTML="<marquee><b>duplicated "+x+" in array</b></marquee>";
+            }
+        }
+    </script>
+</body>
+</html>
+

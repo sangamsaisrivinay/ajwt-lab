@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="StyleSheet" type="text/css" href="../css/exp4.css">
+    <style>
+        #internal
+        {
+            color: wheat;
+            border:3px solid goldenrod;
+            border-radius: 5px;
+            background-color: black;
+            font-size: larger;
+            padding: 30px 20px;
+            margin:20px 10px;
+        }
+        #all
+        {
+            background-color: hotpink;
+            font-weight: 200;
+            color:honeydew;
+        }
+    </style>
+</head>
+<body>
+    <h1> inline style </h1>
+    <div style="border:2px solid goldenrod;background-color:wheat;padding: 20px 10px;margin:20px 10px;">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+        galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.        
+    </div>
+    <h1> internal style </h1>
+    <div id="internal">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+        galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.        
+    </div>
+    <h1> external style </h1>
+    <div id="external">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+        galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.        
+    </div>
+    <h1> ALL COMBINED </h1>
+    <div id="all" style="background-color: black;font-weight: 800;">
+        <h3> External css </h3>
+        {<br/>
+            background-color: goldenrod;<br/>
+            font-weight: 100;<br/>
+            color: red;<br/>
+            border-radius: 10px;<br/>
+            border: 3px solid red;<br/>
+        }
+
+        <h3> internal css </h3>
+        {<br/>
+            background-color: hotpink; <br/>
+            font-weight: 200;<br/>
+            color:honeydew;<br/>
+        }
+
+        <h3> inline css </h3>
+        style="background-color: black;font-weight: 800;"
+    </div>
+    
+</body>
+</html>

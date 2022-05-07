@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var mnth=new Array('jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec');
+        var wkday=new Array('sun','mon','tue','wed','thu','fri','sat');
+        var d=new Date();
+        var str="";
+        str+=d.getDate();
+        str+=" ";
+        str+=mnth[d.getMonth()];
+        str+=" ";
+        str+=d.getFullYear();
+        str+=",";
+        str+=wkday[d.getDay()];
+        console.log(str);
+    </script>
+</body>
+</html>

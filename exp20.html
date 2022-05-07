@@ -1,0 +1,68 @@
+<html>
+<head>
+    <script language="javascript">
+         function fncDisplayInfo()
+         {
+            var xmlhttp=new XMLHttpRequest();
+            console.log(xmlhttp)
+
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                  console.log("done")
+                  console.log(this);
+                  myFunction(this);
+
+                }
+              };
+            xmlhttp.open("GET", "exp20.xml", true);
+            console.log(xmlhttp)
+            xmlhttp.send();
+         }
+
+      function myFunction(xml)
+      {
+          var flag=0;
+          var userid = document.frm.uname.value;
+          console.log("userid",userid)
+            var xmlDoc = xml.responseXML;
+            var noOfUsers = xmlDoc.getElementsByTagName("userlist")[0].length;
+
+            for(var i=0;i<parseInt(noOfUsers);i++)
+             {
+
+                var uid = xmlDoc.getElementsByTagName("user")[i].childNodes[1].innerHTML;
+
+                if(uid == userid)
+                {
+                    document.write("<h1> User Details</h1>");
+
+                    var userName = xmlDoc.getElementsByTagName("user")[i].childNodes[3].innerHTML;
+                    var Address = xmlDoc.getElementsByTagName("user")[i].childNodes[5].innerHTML;
+                    var phone = xmlDoc.getElementsByTagName("user")[i].childNodes[7].innerHTML;
+                    var email = xmlDoc.getElementsByTagName("user")[i].childNodes[9].innerHTML;
+
+                    document.write("<br><b>User ID :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+uid)
+                    document.write("<br>User Name :&nbsp"+userName);
+                    document.write("<br>Address :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp "+Address);
+                    document.write("<br>Phone no : &nbsp&nbsp&nbsp&nbsp&nbsp"+phone);
+                    document.write("<br>E - Mail : &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+email);
+
+                     flag =1;
+                     break;
+                 }
+            }
+             if(flag==0)
+                alert("InValid User");
+        }
+</script>
+</head>
+<body>
+<center>
+    <h1><b>User Information</b></h1>
+    <form name="frm">
+        User ID : <input type="text" name="uname"><br>
+        <input type="button" name="btn" value="Submit" onclick="fncDisplayInfo()">
+    </form>
+</center>
+</body>
+</html>

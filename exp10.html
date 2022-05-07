@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        fieldset{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+        }
+        legend{
+            font-weight: bold;
+            font-size: 16px;
+        }
+        input::placeholder{
+            font-size: 14px;
+        }
+        button{
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 20%;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+        button:hover{
+            opacity: 0.8;
+        }
+        input{
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        #status{
+            color:red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form name="form1">
+    <fieldset>
+        <legend>owner info</legend>
+        <label>A/C No : AC0001254736</label><br>
+        <label>name : V.Krishna</label><br>
+        <label>mobile : +91 9565874523</label><br>
+        <span><label>balance left : </label><label id="rembal" style="font-weight: bold;">1000</label></span>
+    </fieldset>
+    <fieldset>
+        <legend>deposit</legend>
+        <input type="text" name="depositamt" placeholder="Enter deposit amt">
+        <button onclick="deposit()">deposit</button>
+    </fieldset>
+    <fieldset>
+        <legend>withdraw</legend>
+        <input type="text" name="withdrawamt" placeholder="Enter withdraw amt">
+        <button onclick="withdraw()">withdraw</button>
+    </fieldset>
+    </form>
+    
+    <script>
+        var left=document.getElementById("rembal").innerHTML;
+        var balobj=document.getElementById("rembal");
+        function deposit(){
+            let amt=document.getElementsByName("depositamt")[0].value;
+            let amt1=Number(amt);
+                left=Number(left)+amt1;
+                balobj.innerHTML=left;
+            event.preventDefault();
+        }
+        function withdraw(){
+            let amt=document.getElementsByName("withdrawamt")[0].value;
+            let amt1=Number(amt);
+               left=Number(left)-amt1;
+               balobj.innerHTML=left;
+            event.preventDefault();
+        }
+    </script>
+</body>
+</html>

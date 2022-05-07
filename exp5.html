@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        @keyframes first
+        {
+            from{background-color: aquamarine;}
+            to{background-color: blue;}
+        }
+        /* #Animate
+        {
+            height:100px;
+            width:50px;
+            margin:20px;
+            display: flex;
+            align-items:center;
+            background:grey;
+            animation-name: first;
+            animation-delay: 1s;
+            animation-duration: 3s;
+        } */
+
+        #Animate
+        {
+            height:100px;
+            width:50px;
+            /* margin:20px; */
+            /* align-items:center; */
+            background-color:grey;
+            position:relative;
+            animation-name: first;
+            animation-delay: 1sec;
+            animation-duration: 3s;
+        } 
+
+        #transition 
+        {
+            width: 100px;
+            height: 100px;
+            background: red;
+            transition: width 2s, height 4s;
+        }
+
+        #transition:hover
+        {
+            width: 300px;
+            height: 300px;
+        }
+
+        #transform1
+        {
+            display: inline-block;
+            height : 100px;
+            width:150px;
+            background: goldenrod;
+            transform : rotate(30deg);
+        }
+        #transform2
+        {
+            display: inline-block;
+            height : 100px;
+            width:150px;
+            background: goldenrod;
+            transform : skew(30deg,30deg);
+            margin:30px;
+        }
+        #transform3
+        {
+            display: inline-block;
+            height : 100px;
+            width:150px;
+            background: goldenrod;
+            transform : scale(1.5);
+            margin:30px;
+        }
+        #transform4
+        {
+            display: inline-block;
+            height : 100px;
+            width:150px;
+            background: goldenrod;
+            transform: translate(100px,10px);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Text Shadow</h1>
+    <p style="text-shadow: 0px 0px 4px blue;">This text shadow demo</p>
+    <p style="text-shadow: 2px 4px 2px greenyellow;">This text shadow demo</p>
+
+    <h1>rounded Corners</h1>
+    <div style="border:3px solid goldenrod;border-radius: 10px; padding:20px">
+        This is demo for the border radius
+    </div>
+
+    <h1>box shadow</h1>
+    <div style="border:2px solid grey;padding: 10px;box-shadow: 5px 5px 10px grey;">
+        This is demo for the box shadow
+    </div>
+
+
+    <!-- Gradient -->
+    <!-- Linear Gradients (goes down/up/left/right/diagonally)
+    Radial Gradients (defined by their center)
+    Conic Gradients (rotated around a center point) -->
+
+    
+    <h1>linear Gradient</h1>
+    <div style="border:2px solid grey;padding: 10px;box-shadow: 5px 5px 10px grey;height:100px;text-align: center;background-image:linear-gradient(skyblue,greenyellow)">
+        By Default gradient (top - bottom)
+    </div>
+    <h1>Reapating linear Gradient</h1>
+    <div style="border:2px solid grey;padding: 10px;box-shadow: 5px 5px 10px grey;height:100px;text-align: center;background-image:repeating-linear-gradient(to bottom right,rgb(231, 195, 195), yellow 10%, rgb(74, 82, 63) 20%);">
+        Reapating gradient 
+    </div>
+
+    <!-- background-image: radial-gradient(red 5%, yellow 15%, green 60%); -->
+    <h1>Radial Gradient</h1>
+    <div style="border:2px solid grey;padding: 10px;box-shadow: 5px 5px 10px grey;height:100px;text-align: center;background-image: radial-gradient(red 5%, yellow 15%, green 60%);">
+        
+    </div>
+    <h1>circle Gradient</h1>
+    <div style="border:2px solid grey;padding: 10px;box-shadow: 5px 5px 10px grey;height:100px;text-align: center;background-image: radial-gradient(circle,red, yellow, green);">
+    </div>
+
+
+    <!-- Animations  -->
+    <h1>Animations</h1>
+
+    <div id="Animate"> Hi, There. </div>
+
+    <h1>Transition</h1>
+    <div id="transition"></div>
+
+    <h1>transform </h1>
+
+    <div id="transform1"></div>
+    <div id="transform2"></div>
+    <div id="transform3"></div>
+    <div id="transform4"></div>
+
+</body>
+</html>

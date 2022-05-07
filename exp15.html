@@ -1,0 +1,20 @@
+15.Create a web page using two image files, which switch between one another as the mouse pointer moves over the images. Use the mouseover and mouseut event handlers.
+
+<html>
+<head>
+<script type = "text/javascript">
+    function mouseover()
+    {
+        document.getElementById("img").src = "rb.png";
+    }
+    function mouseout()
+    {
+        document.getElementById("img").src = "rw.png";
+    }
+</script>
+</head>
+<body>
+<img src = "rb.png" id = "img" width="300" height="300" onmouseover="mouseover()" onmouseout="mouseout()"/>
+</body>
+</html>
+

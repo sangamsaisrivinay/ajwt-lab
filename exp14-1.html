@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%) fixed;
+        }
+        button{
+            font-weight:bold;
+            border:none;
+            outline:none;
+        }
+        label{
+            font-weight:bold;
+            color: #fff;
+            text-shadow: 2px 2px #000;
+        }
+        input{
+            width: auto;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="name" placeholder="Enter name">
+    <input type="number" id="age" onfocus="alertmsg()" onfocusout="evaluate_age()" placeholder="Enter age">
+    <input type="text" id="fathername" placeholder="enter father name">
+    <br><br><label id="age-status">fill the above fields*</labe>
+<script>
+    function alertmsg(){
+        document.getElementById("age-status").innerHTML="age should be b/w 18 and 25";
+    }
+    function evaluate_age(){
+        var name=document.getElementById('name').value;
+        var num=document.getElementById('age').value;
+        var fathername=document.getElementById('fathername').value;
+        var age=Number(num);
+        console.log(age>18);
+        if(age>=18 && age<=25){
+            document.getElementById("age-status").innerHTML="your age is valid";
+        }
+        else{
+            document.getElementById("age-status").innerHTML="age is not valid";
+        }
+    }  
+</script>
+</body>
+</html>
